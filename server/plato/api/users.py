@@ -1,10 +1,9 @@
 from flask import Blueprint, jsonify, request, make_response
+from plato.api.utils import authenticate, is_admin
 from sqlalchemy import exc
 
 from plato import db
 from plato.api.models import User
-from plato.api.utils import authenticate, is_admin
-
 
 users_blueprint = Blueprint('users', __name__, template_folder='./templates')
 

@@ -1,0 +1,7 @@
+node_modules
+**.py[cod]
+**/__pycache__
+cscope.*
+**.swp
+**.bak
+**/.DS_Store

@@ -1,8 +1,8 @@
+from plato.test.base import BaseTestCase
 from sqlalchemy.exc import IntegrityError
 
 from plato import db
 from plato.api.models import User
-from plato.test.base import BaseTestCase
 from plato.test.utils import add_user
 
 

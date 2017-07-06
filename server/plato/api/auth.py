@@ -1,10 +1,9 @@
 from flask import Blueprint, jsonify, request, make_response
+from plato.api.utils import authenticate
 from sqlalchemy import exc, or_
 
 from plato import db, bcrypt
 from plato.api.models import User
-from plato.api.utils import authenticate
-
 
 auth_blueprint = Blueprint('auth', __name__)
 

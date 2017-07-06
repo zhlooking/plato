@@ -1,12 +1,11 @@
 import unittest
-import coverage
 
-from flask_script import Manager
+import coverage
 from flask_migrate import MigrateCommand
+from flask_script import Manager
 
 from plato import create_app, db
 from plato.api.models import User
-
 
 COV = coverage.coverage(
     branch=True,

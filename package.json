@@ -1,0 +1,7 @@
+{
+    "name": "plato-main",
+    "dependencies": {
+        "testcafe": "0.16.1"
+    }
+}
+
