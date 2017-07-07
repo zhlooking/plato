@@ -3,7 +3,7 @@ from plato.api.utils import authenticate, is_admin
 from sqlalchemy import exc
 
 from plato import db
-from plato.api.models import User
+from plato.model.user import User
 
 users_blueprint = Blueprint('users', __name__, template_folder='./templates')
 
@@ -62,7 +62,7 @@ def add_user(resp):
 
 @users_blueprint.route('/users/<user_id>', methods=['GET'])
 def get_user(user_id):
-    '''Get single userinfo'''
+    '''Get single user info'''
     response_object = {
         'status': 'fail',
         'message': 'User does not exist.'

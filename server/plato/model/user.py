@@ -1,22 +1,7 @@
 import jwt
 import datetime
-
 from flask import current_app
-
 from plato import db, bcrypt
-
-
-class Domain(db.Model):
-    __tablename__ = 'domains'
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    domain = db.Column(db.String(128), unique=True, nullable=False)
-    ip = db.Column(db.String(128), unique=True, nullable=False)
-    master = db.Column(db.Integer, unique=False, nullable=False)
-
-    def __init__(self, domain, ip, master):
-        self.domain = domain
-        self.ip = ip
-        self.master = master
 
 
 class User(db.Model):

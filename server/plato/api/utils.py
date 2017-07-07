@@ -2,7 +2,7 @@ from functools import wraps
 
 from flask import request, make_response, jsonify
 
-from plato.api.models import User
+from plato.model.user import User
 
 
 def authenticate(f):

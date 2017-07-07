@@ -29,9 +29,11 @@ def create_app():
     migrate.init_app(app, db)
 
     # register blueprints
-    from plato.api.users import users_blueprint
     from plato.api.auth import auth_blueprint
-    app.register_blueprint(users_blueprint)
+    from plato.api.users import users_blueprint
+    from plato.api.domains import domains_blueprint
     app.register_blueprint(auth_blueprint)
+    app.register_blueprint(users_blueprint)
+    app.register_blueprint(domains_blueprint)
 
     return app

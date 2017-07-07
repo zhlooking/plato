@@ -5,7 +5,7 @@ from flask_migrate import MigrateCommand
 from flask_script import Manager
 
 from plato import create_app, db
-from plato.api.models import User
+from plato.model.user import User
 
 COV = coverage.coverage(
     branch=True,
