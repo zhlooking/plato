@@ -10,7 +10,7 @@ export default class UserStatus extends React.Component {
             username: '',
             email: '',
             created_at: '',
-        }
+        };
     }
 
     componentDidMount() {
@@ -25,8 +25,8 @@ export default class UserStatus extends React.Component {
             method: 'get',
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: `Bearer ${window.localStorage.authToken}`
-            }
+                Authorization: `Bearer ${window.localStorage.authToken}`,
+            },
         };
         return axios(options)
             .then((res) => {
@@ -37,14 +37,12 @@ export default class UserStatus extends React.Component {
                     created_at: res.data.data.created_at,
                 });
             })
-            .catch((error) => {
-                console.log(error);
-            })
-    };
+            .catch((error) => { console.log(error); });
+    }
 
     render() {
         if (!this.props.isAuthenticated) {
-            return <p>User not logged in</p>
+            return <p>User not logged in</p>;
         }
         return (
             <div>
@@ -55,6 +53,6 @@ export default class UserStatus extends React.Component {
                     <li><strong>Create at: </strong>{this.state.created_at}</li>
                 </ul>
             </div>
-        )
+        );
     }
 }

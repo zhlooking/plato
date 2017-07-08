@@ -6,6 +6,8 @@ from flask_script import Manager
 
 from plato import create_app, db
 from plato.model.user import User
+from plato.model.domain import Domain
+
 
 COV = coverage.coverage(
     branch=True,
@@ -63,6 +65,8 @@ def seed_db():
     '''Seeds the database'''
     db.session.add(User('michael', 'michael@.com', 'test_pwd'))
     db.session.add(User('michaelherman', 'michaelherman@realpython.com', 'test_pwd'))
+    db.session.add(Domain('www.baidu.com', 'http://10.0.0.100', 1))
+    db.session.add(Domain('www.google.com', 'http://10.0.0.200', 1))
     db.session.commit()
 
 

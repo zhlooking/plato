@@ -35,7 +35,14 @@ def register_user():
             response_object = {
                 'status': 'success',
                 'message': 'Successfully registered',
-                'auth_token': auth_token.decode()
+                'auth_token': auth_token.decode(),
+                'user': {
+                    'user_id': new_user.id,
+                    'username': new_user.username,
+                    'email': new_user.email,
+                    'active': user.active,
+                    'created_at': new_user.created_at
+                }
             }
             return make_response(jsonify(response_object)), 201
         else:
@@ -82,7 +89,14 @@ def login_user():
                 response_object = {
                     'status': 'success',
                     'message': 'Successfully logged in',
-                    'auth_token': auth_token.decode()
+                    'auth_token': auth_token.decode(),
+                    'user': {
+                        'user_id': user.id,
+                        'username': user.username,
+                        'email': user.email,
+                        'active': user.active,
+                        'created_at': user.created_at
+                    }
                 }
                 return make_response(jsonify(response_object)), 200
         else:

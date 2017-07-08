@@ -89,7 +89,7 @@ def get_domain(domain_id):
 @domains_blueprint.route('/domains', methods=['GET'])
 def get_all_domains():
     '''get all domain list'''
-    domains = Domain.query.order_by(Domain.id.desc()).all()
+    domains = Domain.query.order_by(Domain.ip.desc()).all()
     domains_list = []
     for domain in domains:
         domain_object = {

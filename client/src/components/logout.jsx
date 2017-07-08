@@ -12,6 +12,6 @@ export default class Logout extends React.Component {
             <div>
                 <p>You are now logged out. Click <Link to="/login">here</Link> to log back in.</p>
             </div>
-        )
+        );
     }
 }

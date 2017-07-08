@@ -46,26 +46,17 @@ services:
             - users-service
 
 
-#    nginx:
-#        container_name: nginx
-#        build: ./nginx/
-#        restart: always
-#        ports:
-#            - 80:80
-#        depends_on:
-#            users-service:
-#                condition: service_started
-#            web-service:
-#                condition: service_started
-#        links:
-#            - users-service
-#            - web-service
-
-
     nginx:
-        container_name: nginx_1
+        container_name: nginx
         build: ./nginx/
         restart: always
         ports:
-            - 80:80
-
+            - '80:80'
+        depends_on:
+            users-service:
+                condition: service_started
+            web-service:
+                condition: service_started
+        links:
+            - users-service
+            - web-service
